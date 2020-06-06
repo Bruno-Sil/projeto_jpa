@@ -13,9 +13,10 @@ public class CriarConta {
 		                                              // E criar o EntityMananger.
 		
 		Conta conta = new Conta();
-		conta.setTitular("Bruno");
-		conta.setNumero(1313);
-		conta.setAgencia(2255);
+		conta.setTitular("Juliano");
+		conta.setNumero(12345);
+		conta.setAgencia(54321);
+		conta.setSaldo(933.45);
 		
 		em.getTransaction().begin();
 		

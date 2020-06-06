@@ -4,11 +4,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class TesteCriaTabelas {
+import br.com.github.brunosil.jpa.modelo.Conta;
+
+public class CriaSaldoConta {
 	public static void main(String args[]) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("conta");
-		EntityManager createEntityManager = emf.createEntityManager();
-		emf.close();
+		EntityManager em = emf.createEntityManager();
+		
+		Conta contaBruno = em.find(Conta.class, 1L);
+		
+		em.getTransaction().begin();
+		
+		contaBruno.setSaldo(500.00);
+		
+		em.getTransaction().commit();
 	}
 
 }
